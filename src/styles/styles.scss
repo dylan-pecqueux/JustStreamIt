@@ -1,0 +1,33 @@
+$primary-color: #141414;
+$secondary-color: white;
+
+body {
+  width: 92%;
+  margin: 0 auto;
+  padding: 0;
+  background-color: $primary-color;
+}
+
+h1 {
+  color: $secondary-color;
+}
+
+a {
+  text-decoration: none;
+  color: $secondary-color;
+  &:hover {
+    color: #d3131d;
+  }
+}
+
+header nav {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  h1 {
+    margin-right: 50px;
+  }
+  a {
+    margin-right: 20px;
+  }
+}

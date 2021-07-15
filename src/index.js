@@ -1,11 +1,4 @@
-import "./styles.scss";
+import './styles/styles.scss';
+import header from './firstMovie';
 
-const allFilms = async () => {
-    try {
-        const response = await fetch('http://localhost:8000/api/v1/titles/?sort_by=-imdb_score');
-        const object = await response.json();
-        return object.results[0]
-    } catch (error) {
-        console.error("error : ", error)
-    }
-}
+header();
