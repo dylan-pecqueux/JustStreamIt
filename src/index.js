@@ -1,4 +1,11 @@
 import './styles/styles.scss';
-import header from './firstMovie';
+import { getBestMovies, getMoviesList } from './GetMovies';
 
-header();
+const displayAllMovies = () => {
+  getBestMovies();
+  getMoviesList('comedy');
+  getMoviesList('action');
+  getMoviesList('animation');
+};
+
+displayAllMovies();
