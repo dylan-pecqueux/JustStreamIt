@@ -68,45 +68,37 @@ const modal = async (url) => {
   });
 };
 
-let scrollPerClick;
-const sliders = document.querySelector('.carousel_box');
-
-let scrollAmount = 0;
-
-const sliderScrollLeft = () => {
-  sliders.scrollTo({
-    top: 0,
-    left: (scrollAmount -= scrollPerClick),
-    behavior: 'smooth',
-  });
-
-  if (scrollAmount < 0) {
-    scrollAmount = 0;
-  }
-};
-
-function sliderScrollRight() {
-  if (scrollAmount <= sliders.scrollWidth - sliders.clientWidth) {
-    sliders.scrollTo({
-      top: 0,
-      left: (scrollAmount += scrollPerClick),
-      behavior: 'smooth',
-    });
-  }
-}
-
 export const insertMovies = (bestMovies, selector) => {
-  const moviesSection = document.querySelector(selector);
+  const moviesSection = document.querySelector(`${selector}-movies`);
   bestMovies.forEach((article, i) => {
     moviesSection.innerHTML += `
         <img class="img-${i}" src="${article.image_url}" data-id="${article.id}" alt="movie image">
     `;
   });
-  scrollPerClick = document.querySelector('.carousel_box .img-1').clientWidth + 80;
-  document.querySelector('.switchLeft').addEventListener('click', () => sliderScrollLeft());
-  document.querySelector('.switchRight').addEventListener('click', () => sliderScrollRight());
+  const scrollPerClick = document.querySelector(`${selector} .img-1`).clientWidth + 80;
+  let scrollAmount = 0;
+  document.querySelector(`${selector} .switchLeft`).addEventListener('click', () => {
+    moviesSection.scrollTo({
+      top: 0,
+      left: (scrollAmount -= scrollPerClick),
+      behavior: 'smooth',
+    });
+
+    if (scrollAmount < 0) {
+      scrollAmount = 0;
+    }
+  });
+  document.querySelector(`${selector} .switchRight`).addEventListener('click', () => {
+    if (scrollAmount <= moviesSection.scrollWidth - moviesSection.clientWidth) {
+      moviesSection.scrollTo({
+        top: 0,
+        left: (scrollAmount += scrollPerClick),
+        behavior: 'smooth',
+      });
+    }
+  });
   bestMovies.forEach((article) => {
-    document.querySelector(`div${selector} > img[data-id="${article.id}"]`).addEventListener('click', (e) => {
+    document.querySelector(`${selector}-movies > img[data-id="${article.id}"]`).addEventListener('click', (e) => {
       e.preventDefault();
       modal(article.url);
     }, false);

@@ -47,7 +47,7 @@ header nav {
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 5% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
@@ -68,6 +68,11 @@ header nav {
   cursor: pointer;
 }
 
+section h2 {
+  color: $secondary-color;
+  padding-left: 7%;
+}
+
 .carousel {
   margin: 0 auto;
   width: 90%;
@@ -82,12 +87,12 @@ header nav {
   line-height: 250px;
   font-size: 25px;
   text-align: center;
-  background-color: lightgreen;
   font-family: sans-serif;
   top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .carousel .switchLeft {
@@ -97,7 +102,6 @@ header nav {
 
 .carousel .switchRight {
   position: absolute;
-
   right: -50px;
 }
 

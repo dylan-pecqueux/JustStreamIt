@@ -6,7 +6,7 @@ export const getMoviesList = async (genre) => {
   const moviesP2 = await fetchMovies(`?genre=${genre}&page=2&sort_by=-imdb_score`);
   const movies = moviesP1.concat(moviesP2);
   const firstSevenMovies = movies.slice(0, 7);
-  insertMovies(firstSevenMovies, `.${genre}-movies`);
+  insertMovies(firstSevenMovies, `.${genre}`);
 };
 
 export const getBestMovies = async () => {
@@ -16,5 +16,5 @@ export const getBestMovies = async () => {
   const movieInfo = await fetchMovie(movies[0].url);
   insertHeader(movieInfo);
   const firstSevenMovies = movies.slice(1, 8);
-  insertMovies(firstSevenMovies, '.best-movies');
+  insertMovies(firstSevenMovies, '.best');
 };
