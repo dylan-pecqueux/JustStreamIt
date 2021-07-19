@@ -68,17 +68,45 @@ const modal = async (url) => {
   });
 };
 
+let scrollPerClick;
+const sliders = document.querySelector('.carousel_box');
+
+let scrollAmount = 0;
+
+const sliderScrollLeft = () => {
+  sliders.scrollTo({
+    top: 0,
+    left: (scrollAmount -= scrollPerClick),
+    behavior: 'smooth',
+  });
+
+  if (scrollAmount < 0) {
+    scrollAmount = 0;
+  }
+};
+
+function sliderScrollRight() {
+  if (scrollAmount <= sliders.scrollWidth - sliders.clientWidth) {
+    sliders.scrollTo({
+      top: 0,
+      left: (scrollAmount += scrollPerClick),
+      behavior: 'smooth',
+    });
+  }
+}
+
 export const insertMovies = (bestMovies, selector) => {
   const moviesSection = document.querySelector(selector);
-  bestMovies.forEach((article) => {
+  bestMovies.forEach((article, i) => {
     moviesSection.innerHTML += `
-      <button class="btn-${article.id}" data-id="${article.id}">
-        <img src="${article.image_url} alt="movie image">
-      </button>
+        <img class="img-${i}" src="${article.image_url}" data-id="${article.id}" alt="movie image">
     `;
   });
+  scrollPerClick = document.querySelector('.carousel_box .img-1').clientWidth + 80;
+  document.querySelector('.switchLeft').addEventListener('click', () => sliderScrollLeft());
+  document.querySelector('.switchRight').addEventListener('click', () => sliderScrollRight());
   bestMovies.forEach((article) => {
-    document.querySelector(`div${selector} > button[data-id="${article.id}"]`).addEventListener('click', (e) => {
+    document.querySelector(`div${selector} > img[data-id="${article.id}"]`).addEventListener('click', (e) => {
       e.preventDefault();
       modal(article.url);
     }, false);
