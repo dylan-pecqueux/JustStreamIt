@@ -10,11 +10,38 @@ export const insertHeader = (movieInfo) => {
   `;
 };
 
+const modal = (article) => {
+  document.querySelector('.modal-section').innerHTML = `
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>${article.title}</p>
+      </div>
+    </div>
+  `;
+  document.querySelector('.close').addEventListener('click', () => {
+    document.querySelector('.modal-section').innerHTML = '';
+  });
+  window.addEventListener('click', (event) => {
+    if (event.target === document.querySelector('.modal')) {
+      document.querySelector('.modal-section').innerHTML = '';
+    }
+  });
+};
+
 export const insertMovies = (bestMovies, selector) => {
   const moviesSection = document.querySelector(selector);
   bestMovies.forEach((article) => {
     moviesSection.innerHTML += `
-      <img src="${article.image_url} alt="movie image">
+      <button class="btn-${article.id}" data-id="${article.id}">
+        <img src="${article.image_url} alt="movie image">
+      </button>
     `;
+  });
+  bestMovies.forEach((article) => {
+    document.querySelector(`div${selector} > button[data-id="${article.id}"]`).addEventListener('click', (e) => {
+      e.preventDefault();
+      modal(article);
+    }, false);
   });
 };

@@ -22,4 +22,10 @@
 main {
   display: flex;
   flex-direction: column;
+  section div {
+    display: flex;
+    button {
+      margin: 20px;
+    }
+  }
 }
