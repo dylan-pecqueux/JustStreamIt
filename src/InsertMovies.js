@@ -75,7 +75,7 @@ export const insertMovies = (bestMovies, selector) => {
         <img class="img-${i}" src="${article.image_url}" data-id="${article.id}" alt="movie image">
     `;
   });
-  const scrollPerClick = document.querySelector(`${selector} .img-1`).clientWidth + 80;
+  const scrollPerClick = document.querySelector(`${selector} .img-1`).clientWidth + 300;
   let scrollAmount = 0;
   document.querySelector(`${selector} .switchLeft`).addEventListener('click', () => {
     moviesSection.scrollTo({

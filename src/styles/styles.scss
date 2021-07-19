@@ -2,7 +2,6 @@ $primary-color: #141414;
 $secondary-color: white;
 
 body {
-  width: 92%;
   margin: 0 auto;
   padding: 0;
   background-color: $primary-color;
@@ -21,6 +20,8 @@ a {
 }
 
 header nav {
+  margin: 0 auto;
+  width: 80%;
   height: 70px;
   display: flex;
   align-items: center;
@@ -70,12 +71,12 @@ header nav {
 
 section h2 {
   color: $secondary-color;
-  padding-left: 7%;
+  padding-left: 2%;
 }
 
 .carousel {
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   position: relative;
 }
 .carousel .switchLeft,
@@ -120,7 +121,6 @@ section h2 {
 .carousel_box img {
   height: 300px;
   background-size: cover;
-  background-color: lightgreen;
   margin: 5px 30px;
   cursor: pointer;
   transition: 0.5s ease;
