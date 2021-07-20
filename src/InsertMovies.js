@@ -1,16 +1,6 @@
 import './styles/firstMovie.scss';
 import { fetchMovie } from './request';
 
-export const insertHeader = (movieInfo) => {
-  document.querySelector('.first-movie').innerHTML = `
-      <div class="first-movie_info">
-        <h2>${movieInfo.title}</h2>
-        <p>${movieInfo.description}</p>
-      </div>
-      <img src="${movieInfo.image_url} alt="movie image">
-  `;
-};
-
 const modal = async (url) => {
   const movie = await fetchMovie(url);
   let genres = '';
@@ -66,6 +56,20 @@ const modal = async (url) => {
       document.querySelector('.modal-section').innerHTML = '';
     }
   });
+};
+
+export const insertHeader = (movieInfo) => {
+  document.querySelector('.first-movie').innerHTML = `
+      <div class="first-movie_info">
+        <h2>${movieInfo.title}</h2>
+        <p>${movieInfo.description}</p>
+        <button class="btn-more">Plus d'info</button>
+      </div>
+      <img src="${movieInfo.image_url} alt="movie image">
+  `;
+  document.querySelector('.btn-more').addEventListener('click', () => {
+    modal(movieInfo.url);
+  }, false);
 };
 
 export const insertMovies = (bestMovies, selector) => {
