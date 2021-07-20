@@ -114,3 +114,7 @@ export const insertMovies = (bestMovies, selector) => {
     }, false);
   });
 };
+
+export const stopLoading = () => {
+  document.querySelector('.loading').classList.add('hide-loading');
+};

@@ -64,6 +64,47 @@ section h2 {
   font-size: 2rem;
 }
 
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.hide-loading {
+  visibility: hidden;
+  padding: 10px;
+  background-color: rgba(92, 91, 87, 0.9);
+  opacity: 0;
+  -webkit-transition: opacity 1s, visibility 1s;
+  transition: opacity 1s, visibility 1s, transform 1s;
+}
+
+.loading {
+  transition: 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: $primary-color;
+  img {
+    height: 10vw;
+    animation: rotation 2s infinite linear;
+  }
+  p {
+    color: $secondary-color;
+    font-size: 5vw;
+  }
+}
+
 .modal {
   display: block;
   position: fixed;
