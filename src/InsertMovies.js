@@ -1,5 +1,6 @@
 import './styles/firstMovie.scss';
 import { fetchMovie } from './request';
+import slider from './sliders';
 
 const modal = async (url) => {
   const movie = await fetchMovie(url);
@@ -79,28 +80,7 @@ export const insertMovies = (bestMovies, selector) => {
         <img class="img-${i}" src="${article.image_url}" data-id="${article.id}" alt="movie image">
     `;
   });
-  const scrollPerClick = document.querySelector(`${selector} .img-1`).clientWidth + 300;
-  let scrollAmount = 0;
-  document.querySelector(`${selector} .switchLeft`).addEventListener('click', () => {
-    moviesSection.scrollTo({
-      top: 0,
-      left: (scrollAmount -= scrollPerClick),
-      behavior: 'smooth',
-    });
-
-    if (scrollAmount < 0) {
-      scrollAmount = 0;
-    }
-  });
-  document.querySelector(`${selector} .switchRight`).addEventListener('click', () => {
-    if (scrollAmount <= moviesSection.scrollWidth - moviesSection.clientWidth) {
-      moviesSection.scrollTo({
-        top: 0,
-        left: (scrollAmount += scrollPerClick),
-        behavior: 'smooth',
-      });
-    }
-  });
+  slider(selector);
   bestMovies.forEach((article) => {
     document.querySelector(`${selector}-movies > img[data-id="${article.id}"]`).addEventListener('click', (e) => {
       e.preventDefault();
