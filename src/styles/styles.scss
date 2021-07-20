@@ -1,5 +1,6 @@
 $primary-color: #141414;
 $secondary-color: white;
+$hover-color: #d3131d;
 
 @font-face {
   font-family: "Netflix";
@@ -28,12 +29,12 @@ a {
   }
 }
 header {
-  background: rgb(9, 9, 121);
+  background: rgb(20, 20, 20);
   background: linear-gradient(
     180deg,
-    rgba(9, 9, 121, 1) 0%,
-    rgba(51, 235, 244, 1) 61%,
-    rgba(9, 9, 121, 1) 90%,
+    rgba(20, 20, 20, 1) 0%,
+    rgba(9, 9, 121, 1) 50%,
+    rgba(51, 235, 244, 1) 79%,
     rgba(20, 20, 20, 1) 100%
   );
   background-size: 100% 85%;

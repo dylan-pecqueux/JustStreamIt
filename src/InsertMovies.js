@@ -24,28 +24,56 @@ const modal = async (url) => {
     <div class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
-        <img src="${movie.image_url} alt="movie image">
-        <h2>${movie.title}</h2>
-        <h3>Genres</h3>
-        ${genres}
-        <h3>Date de sortie</h3>
-        <p>${movie.date_published}</p>
-        <h3>Rated</h3>
-        <p>${movie.rated}</p>
-        <h3>Score imdb</h3>
-        <p>${movie.imdb_score}</p>
-        <h3>Directeurs</h3>
-        ${directors}
-        <h3>Acteurs</h3>
-        ${actors}
-        <h3>Durée</h3>
-        <p>${movie.duration}</p>
-        <h3>Pays d'origine</h3>
-        ${countries}
-        <h3>Résultat au Box Office</h3>
-        <p>${movie.worldwide_gross_income}</p>
-        <h3>Description</h3>
-        <p>${movie.description}<p>
+        <div class="modal-content_header">
+          <div class="modal-content_header_infos">
+            <h2>${movie.title}</h2>
+            <div class="modal-content_header_infos_other">
+              <div>
+                <h3>Genres</h3>
+                ${genres}
+              </div>
+              <div>
+                <h3>Date de sortie</h3>
+                <p>${movie.date_published}</p>
+              </div>
+              <div>
+                <h3>Score imdb</h3>
+                <p>${movie.imdb_score}</p>
+              </div>
+            </div>
+            <div class="modal-content_header_infos_other">
+              <div>
+                <h3>Pays d'origine</h3>
+                ${countries}
+              </div>
+              <div>
+                <h3>Durée</h3>
+                <p>${movie.duration}</p>
+              </div>
+            </div>
+          </div>
+          <img src="${movie.image_url} alt="movie image">
+        </div>
+        <div class="modal-content_main">
+          <h3>Description</h3>
+          <p>${movie.long_description}<p>
+        </div>
+        <div class="modal-content_actors">
+          <div>
+            <h3>Directeurs</h3>
+            ${directors}
+          </div>
+            <h3>Acteurs</h3>
+            ${actors}
+          <div>
+        </div>
+          <h3>Rated</h3>
+          <p>${movie.rated}</p>
+          
+          
+          <h3>Résultat au Box Office</h3>
+          <p>${movie.worldwide_gross_income}</p>
+        
       </div>
     </div>
   `;
