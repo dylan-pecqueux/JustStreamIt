@@ -2,24 +2,20 @@ import './styles/firstMovie.scss';
 import { fetchMovie } from './request';
 import slider from './sliders';
 
+const transformArray = (arr) => {
+  let transformArr = '';
+  arr.forEach((element) => {
+    transformArr += `<p>${element}</p>`;
+  });
+  return transformArr;
+};
+
 const modal = async (url) => {
   const movie = await fetchMovie(url);
-  let genres = '';
-  let directors = '';
-  let actors = '';
-  let countries = '';
-  movie.genres.forEach((genre) => {
-    genres += `<p>${genre}</p>`;
-  });
-  movie.directors.forEach((director) => {
-    directors += `<p>${director}</p>`;
-  });
-  movie.actors.forEach((actor) => {
-    actors += `<p>${actor}</p>`;
-  });
-  movie.countries.forEach((country) => {
-    countries += `<p>${country}</p>`;
-  });
+  const genres = transformArray(movie.genres);
+  const directors = transformArray(movie.directors);
+  const actors = transformArray(movie.actors);
+  const countries = transformArray(movie.countries);
   document.querySelector('.modal-section').innerHTML = `
     <div class="modal">
       <div class="modal-content">
