@@ -64,7 +64,7 @@ export const insertHeader = (movieInfo) => {
       <div class="first-movie_info">
         <h2>${movieInfo.title}</h2>
         <p>${movieInfo.description}</p>
-        <button class="btn-more">Plus d'info</button>
+        <button class="btn-more"><i class="fas fa-info-circle"></i> <p>Plus d'infos</p></button>
       </div>
       <img src="${movieInfo.image_url} alt="movie image">
   `;
