@@ -27,7 +27,7 @@ const modal = async (url) => {
         <div class="modal-content_header">
           <div class="modal-content_header_infos">
             <h2>${movie.title}</h2>
-            <div class="modal-content_header_infos_other">
+            <div class="modal-content_header_infos_first">
               <div>
                 <h3>Genres</h3>
                 ${genres}
@@ -41,7 +41,7 @@ const modal = async (url) => {
                 <p>${movie.imdb_score}</p>
               </div>
             </div>
-            <div class="modal-content_header_infos_other">
+            <div class="modal-content_header_infos_second">
               <div>
                 <h3>Pays d'origine</h3>
                 ${countries}
@@ -60,20 +60,22 @@ const modal = async (url) => {
         </div>
         <div class="modal-content_actors">
           <div>
+            <h3>Acteurs</h3>
+            ${actors}
+          </div>
+          <div>
             <h3>Directeurs</h3>
             ${directors}
           </div>
-            <h3>Acteurs</h3>
-            ${actors}
           <div>
+            <h3>Rated</h3>
+            <p>${movie.rated}</p>
+          </div>
+          <div>
+            <h3>Résultat au Box Office</h3>
+            <p>${movie.worldwide_gross_income}</p>
+          </div>
         </div>
-          <h3>Rated</h3>
-          <p>${movie.rated}</p>
-          
-          
-          <h3>Résultat au Box Office</h3>
-          <p>${movie.worldwide_gross_income}</p>
-        
       </div>
     </div>
   `;

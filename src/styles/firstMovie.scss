@@ -43,7 +43,7 @@
   align-items: center;
   color: $primary-color;
   &:hover {
-    background-color: #d3131d;
+    background-color: $hover-color;
     color: white;
   }
   &:hover > p {
@@ -82,7 +82,7 @@ section h2 {
   margin: 5% auto;
   padding: 20px;
   border-radius: 5px;
-  width: 70%;
+  max-width: 70%;
   color: $secondary-color;
 }
 
@@ -92,21 +92,34 @@ section h2 {
   justify-content: space-between;
   flex-wrap: wrap;
   img {
-    width: 18rem;
-    margin: 10px 0;
+    height: 25rem;
+    margin: 10px 0 0 0;
   }
   &_infos {
-    max-width: 70%;
-    margin-right: 10px;
+    max-width: 60%;
+    margin: 0;
     h2 {
-      font-size: 4rem;
       margin: 0;
+      font-size: 4rem;
     }
-    &_other {
+    &_first {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       div {
+        margin-right: 30px;
+        h3 {
+          font-size: 1.5rem;
+          color: $hover-color;
+        }
+      }
+    }
+    &_second {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      div {
+        margin-right: 40px;
         h3 {
           font-size: 1.5rem;
           color: $hover-color;
@@ -118,6 +131,17 @@ section h2 {
 
 .modal-content_main {
   padding: 0 30px;
+  h3 {
+    font-size: 1.5rem;
+    color: $hover-color;
+  }
+}
+
+.modal-content_actors {
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   h3 {
     font-size: 1.5rem;
     color: $hover-color;

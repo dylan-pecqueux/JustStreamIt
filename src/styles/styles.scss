@@ -1,6 +1,6 @@
 $primary-color: #141414;
 $secondary-color: white;
-$hover-color: #d3131d;
+$hover-color: #33ebf4;
 
 @font-face {
   font-family: "Netflix";
@@ -25,7 +25,7 @@ a {
   text-decoration: none;
   color: $secondary-color;
   &:hover {
-    color: #d3131d;
+    color: $hover-color;
   }
 }
 header {
