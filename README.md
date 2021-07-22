@@ -22,7 +22,7 @@ Lien du repo de l'API : https://github.com/OpenClassrooms-Student-Center/OCMovie
 ## Fabriqué avec
 
 - [HTML](https://developer.mozilla.org/fr/docs/Web/HTML)
-- [CSS](https://developer.mozilla.org/fr/docs/Web/CSS)
+- [SASS](https://sass-lang.com/)
 - [JavaScript](https://www.javascript.com/)
 - [Webpack](https://webpack.js.org/)
 - [Babel](https://babeljs.io/)
