@@ -1,4 +1,6 @@
 import './styles/firstMovie.scss';
+import './styles/modal.scss';
+import './styles/categories.scss';
 import { fetchMovie } from './request';
 import slider from './sliders';
 

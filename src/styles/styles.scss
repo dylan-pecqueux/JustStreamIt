@@ -54,14 +54,21 @@ header nav {
   .navbar {
     margin: 0 auto;
     width: 80%;
-    height: 70px;
+    height: 80px;
     display: flex;
     align-items: center;
     h1 {
-      margin-right: 50px;
+      margin-right: 80px;
+      font-size: 1.9rem;
     }
-    a {
-      margin-right: 20px;
+    .nav-link {
+      display: flex;
+      align-items: center;
+      a {
+        padding-top: 8px;
+        font-size: 1.2rem;
+        margin-right: 30px;
+      }
     }
     img {
       width: 70px;
