@@ -8,7 +8,8 @@
   "license": "ISC",
   "scripts": {
     "clean": "rm dist/bundle.js",
-    "build": "webpack --env NODE_ENV=development --config webpack.config.js"
+    "start": "webpack --env NODE_ENV=development --config webpack.config.js",
+    "build": "webpack"
   },
   "dependencies": {
     "core-js": "^3.15.2"
